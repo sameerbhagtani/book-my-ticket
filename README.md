@@ -49,7 +49,7 @@ A backend system for a theatre booking platform with a complete authentication f
 
 ## DB Design
 
-![ER Diagram](./assets/er.png)
+![ER Diagram](./public/assets/er.png)
 
 - **users**: stores user credentials, roles, and verification state
 - **screens**: represents theatre screens
@@ -65,7 +65,7 @@ A backend system for a theatre booking platform with a complete authentication f
 
 Authentication is implemented using access tokens and refresh tokens. Access tokens are short-lived and used for authorization, while refresh tokens are stored in cookies and used to generate new access tokens securely.
 
-Prefix: `/api/user`
+Prefix: `/api/users`
 
 | Method | Route                | Description               |
 | ------ | -------------------- | ------------------------- |

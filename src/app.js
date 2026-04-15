@@ -1,6 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path";
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.use(getUser);
 
 import corsOptions from "./config/cors.js";
 app.use(cors(corsOptions));
+
+app.use(express.static(path.join(process.cwd(), "public")));
 
 // routes
 app.get("/api/ping", (req, res) => {
