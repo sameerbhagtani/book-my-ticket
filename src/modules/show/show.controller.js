@@ -4,6 +4,7 @@ import { eq } from "drizzle-orm";
 
 import ApiError from "../../utils/ApiError.js";
 import ApiResponse from "../../utils/ApiResponse.js";
+import { parseDateTimeInIST } from "../../utils/time.js";
 
 export async function getShows(_req, res) {
     const allShows = await db.select().from(shows);
@@ -45,6 +46,12 @@ export async function getShowSeats(req, res) {
 
 export async function createShow(req, res) {
     const { screenId, movieTitle, startTime, endTime } = req.validatedData;
+    const parsedStartTime = parseDateTimeInIST(startTime);
+    const parsedEndTime = parseDateTimeInIST(endTime);
+
+    if (!parsedStartTime || !parsedEndTime) {
+        throw ApiError.badRequest("Invalid show timing");
+    }
 
     const screenSeats = await db
         .select()
@@ -60,8 +67,8 @@ export async function createShow(req, res) {
         .values({
             screenId,
             movieTitle,
-            startTime: new Date(startTime),
-            endTime: new Date(endTime),
+            startTime: parsedStartTime,
+            endTime: parsedEndTime,
         })
         .returning();
 

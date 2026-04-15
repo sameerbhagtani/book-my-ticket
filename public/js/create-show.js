@@ -3,6 +3,7 @@ import {
     ensureAuthenticated,
     goForbidden,
     mountChrome,
+    parseISTDateTimeLocal,
     showFlashFromStorage,
 } from "./app.js";
 
@@ -83,19 +84,25 @@ async function init() {
             return;
         }
 
-        if (!payload.startTime || !payload.endTime) {
+        const startTime = parseISTDateTimeLocal(payload.startTime);
+        const endTime = parseISTDateTimeLocal(payload.endTime);
+
+        if (!startTime || !endTime) {
             if (noticeRegion) {
-                noticeRegion.innerHTML = `<div class="notice warning">Please set both start and end time.</div>`;
+                noticeRegion.innerHTML = `<div class="notice warning">Please set valid start and end time values.</div>`;
             }
             return;
         }
 
-        if (new Date(payload.endTime) <= new Date(payload.startTime)) {
+        if (endTime <= startTime) {
             if (noticeRegion) {
                 noticeRegion.innerHTML = `<div class="notice warning">End time must be later than start time.</div>`;
             }
             return;
         }
+
+        payload.startTime = startTime.toISOString();
+        payload.endTime = endTime.toISOString();
 
         submitButton.disabled = true;
         submitButton.textContent = "Creating...";

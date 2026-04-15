@@ -141,6 +141,47 @@ export function goForbidden() {
     go("/403.html");
 }
 
+const INDIA_TIME_ZONE = "Asia/Kolkata";
+const INDIA_TIME_ZONE_OFFSET_MINUTES = 330;
+
+export function parseISTDateTimeLocal(value) {
+    if (!value) {
+        return null;
+    }
+
+    const match = String(value).match(
+        /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?$/,
+    );
+
+    if (!match) {
+        return null;
+    }
+
+    const [
+        ,
+        yearText,
+        monthText,
+        dayText,
+        hourText,
+        minuteText,
+        secondText = "0",
+    ] = match;
+
+    const timestamp =
+        Date.UTC(
+            Number(yearText),
+            Number(monthText) - 1,
+            Number(dayText),
+            Number(hourText),
+            Number(minuteText),
+            Number(secondText),
+        ) -
+        INDIA_TIME_ZONE_OFFSET_MINUTES * 60 * 1000;
+
+    const date = new Date(timestamp);
+    return Number.isNaN(date.getTime()) ? null : date;
+}
+
 export function formatShortDate(value) {
     if (!value) {
         return "";
@@ -150,6 +191,7 @@ export function formatShortDate(value) {
     return new Intl.DateTimeFormat(undefined, {
         day: "numeric",
         month: "short",
+        timeZone: INDIA_TIME_ZONE,
     }).format(date);
 }
 
@@ -161,6 +203,7 @@ export function formatTimeRange(startTime, endTime) {
     const formatter = new Intl.DateTimeFormat(undefined, {
         hour: "numeric",
         minute: "2-digit",
+        timeZone: INDIA_TIME_ZONE,
     });
 
     return `${formatter.format(new Date(startTime))} - ${formatter.format(new Date(endTime))}`;

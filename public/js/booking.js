@@ -24,11 +24,13 @@ function formatScheduleRange(startTime, endTime) {
         month: "short",
         day: "numeric",
         year: "numeric",
+        timeZone: "Asia/Kolkata",
     }).format(start);
 
     const timePart = new Intl.DateTimeFormat(undefined, {
         hour: "numeric",
         minute: "2-digit",
+        timeZone: "Asia/Kolkata",
     });
 
     return `${datePart}, ${timePart.format(start)} - ${timePart.format(end)}`;
