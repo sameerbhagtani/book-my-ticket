@@ -2,6 +2,10 @@
 
 A backend system for a theatre booking platform with a complete authentication flow using access and refresh tokens, role-based admin routes, and concurrency-safe seat booking using row-level locking to prevent double bookings. The system is designed with a clean modular structure, proper validation, and scalable architecture.
 
+## Live Preview
+
+https://book-my-ticket-t1uv.onrender.com
+
 ---
 
 ## Setup Instructions
@@ -56,6 +60,22 @@ A backend system for a theatre booking platform with a complete authentication f
 - **seats**: defines seat layout for each screen
 - **shows**: stores movie shows with timing and screen reference
 - **show_seats**: maps seats to shows and tracks booking status
+
+---
+
+## Screenshots
+
+### Home Page
+
+![Home Page](./public/assets/home.png)
+
+### Booking Page
+
+![Booking Page](./public/assets/booking.png)
+
+### Admin Create Show Page
+
+![Admin Create Show Page](./public/assets/admin.png)
 
 ---
 
@@ -138,6 +158,9 @@ These are applied appropriately across routes to enforce security and access con
 
 ## Tech Stack
 
+- HTML
+- CSS
+- JavaScript
 - Node.js
 - Express
 - PostgreSQL
