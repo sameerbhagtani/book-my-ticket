@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <title>Booking · Book My Ticket</title>
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/booking.css" />
+    </head>
+    <body>
+        <header id="site-header" class="topbar"></header>
+        <main class="page">
+            <section class="booking-shell">
+                <div id="booking-notice"></div>
+                <article class="booking-summary card">
+                    <div id="booking-summary"></div>
+                </article>
+                <section class="card booking-grid">
+                    <div class="section-head">
+                        <div>
+                            <h2 class="section-title">Choose a seat</h2>
+                            <p class="section-note">
+                                Available seats are white. Booked seats are
+                                muted. Clicking a seat books it instantly.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="seats-region" class="seat-map"></div>
+                </section>
+            </section>
+        </main>
+        <footer id="site-footer" class="footer"></footer>
+        <script type="module" src="/js/booking.js"></script>
+    </body>
+</html>

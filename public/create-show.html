@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <title>Create Show · Book My Ticket</title>
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/admin.css" />
+    </head>
+    <body>
+        <header id="site-header" class="topbar"></header>
+        <main class="page">
+            <section class="admin-shell">
+                <div id="admin-notice"></div>
+                <article class="admin-card card">
+                    <div class="auth-head">
+                        <h1 class="page-title">Create a show</h1>
+                    </div>
+                    <form id="create-show-form" class="admin-form">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="screen-id">Screen</label>
+                                <select
+                                    id="screen-id"
+                                    name="screenId"
+                                    class="select"
+                                    required
+                                ></select>
+                            </div>
+                            <div class="field">
+                                <label for="movie-title">Movie title</label>
+                                <input
+                                    id="movie-title"
+                                    name="movieTitle"
+                                    type="text"
+                                    class="input"
+                                    placeholder="Movie title"
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="start-time">Start time</label>
+                                <input
+                                    id="start-time"
+                                    name="startTime"
+                                    type="datetime-local"
+                                    class="input"
+                                    required
+                                />
+                            </div>
+                            <div class="field">
+                                <label for="end-time">End time</label>
+                                <input
+                                    id="end-time"
+                                    name="endTime"
+                                    type="datetime-local"
+                                    class="input"
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button
+                                id="create-show-submit"
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Create show
+                            </button>
+                            <a class="btn btn-secondary" href="/">Back home</a>
+                        </div>
+                    </form>
+                </article>
+            </section>
+        </main>
+        <footer id="site-footer" class="footer"></footer>
+        <script type="module" src="/js/create-show.js"></script>
+    </body>
+</html>

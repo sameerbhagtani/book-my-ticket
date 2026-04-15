@@ -230,12 +230,21 @@ export async function refresh(req, res) {
         throw ApiError.unauthorized("Invalid or expired refresh token");
     }
 
+    const [user] = await db
+        .select()
+        .from(users)
+        .where(eq(users.id, payload.id));
+
+    if (!user) {
+        throw ApiError.unauthorized("Invalid refresh token");
+    }
+
     const newAccessToken = generateAccessToken({
-        id: payload.id,
-        name: payload.name,
-        email: payload.email,
-        isAdmin: payload.isAdmin,
-        isVerified: payload.isVerified,
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+        isVerified: user.isVerified,
     });
 
     return ApiResponse.ok(res, "Token refreshed", {

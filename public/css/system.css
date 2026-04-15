@@ -1,0 +1,30 @@
+.system-shell {
+    width: min(100%, 600px);
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+
+.system-card {
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+}
+
+.system-code {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #f8faf8;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.system-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}

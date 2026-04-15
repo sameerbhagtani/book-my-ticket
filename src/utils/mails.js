@@ -9,7 +9,7 @@ const senderEmail = process.env.BREVO_SENDER_MAIL;
 const senderName = "ChaiCode Cinema";
 
 export async function sendVerificationEmail(email, token) {
-    const verificationLink = `${process.env.CLIENT_URL}/verify-email?token=${token}`;
+    const verificationLink = `${process.env.CLIENT_URL}/verify-email.html?token=${token}`;
 
     const htmlContent = VERIFY_EMAIL_TEMPLATE.replace(
         "{verificationLink}",
@@ -34,7 +34,7 @@ export async function sendVerificationEmail(email, token) {
 }
 
 export async function sendResetPasswordEmail(email, token) {
-    const resetLink = `${process.env.CLIENT_URL}/reset-password?token=${token}`;
+    const resetLink = `${process.env.CLIENT_URL}/reset-password.html?token=${token}`;
 
     const htmlContent = RESET_PASSWORD_TEMPLATE.replace(
         "{resetLink}",

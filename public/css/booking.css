@@ -1,0 +1,139 @@
+.booking-shell {
+    display: grid;
+    gap: 1rem;
+}
+
+.booking-summary {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.summary-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.summary-actions .btn {
+    min-height: 2.35rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.92rem;
+}
+
+.summary-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.booking-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.seat-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.legend-swatch {
+    width: 0.95rem;
+    height: 0.95rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+}
+
+.legend-swatch.booked {
+    background: #d1d5db;
+}
+
+.legend-swatch.selected {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.legend-swatch.available {
+    background: #ffffff;
+}
+
+.seat-map {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.seat-rows {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.seat-row {
+    display: grid;
+    grid-template-columns: 3rem repeat(10, minmax(2.5rem, 1fr));
+    gap: 0.55rem;
+    align-items: center;
+}
+
+.row-label {
+    font-weight: 700;
+    color: var(--muted);
+    text-align: center;
+}
+
+.seat {
+    min-height: 2.65rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    color: var(--text);
+    cursor: pointer;
+    transition:
+        transform 0.16s ease,
+        border-color 0.16s ease,
+        background-color 0.16s ease,
+        color 0.16s ease;
+}
+
+.seat:hover {
+    transform: translateY(-1px);
+    border-color: #cbd8cb;
+}
+
+.seat.available {
+    background: #ffffff;
+}
+
+.seat.booked-success {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+.seat.booked {
+    background: #e5e7eb;
+    border-color: #d1d5db;
+    color: #4b5563;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 860px) {
+    .seat-row {
+        grid-template-columns: 2.5rem repeat(5, minmax(2.4rem, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .seat-row {
+        grid-template-columns: 2rem repeat(5, minmax(2.1rem, 1fr));
+    }
+}

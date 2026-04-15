@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <title>Login · Book My Ticket</title>
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/auth.css" />
+    </head>
+    <body>
+        <header id="site-header" class="topbar"></header>
+        <main class="page">
+            <section class="auth-shell">
+                <div id="login-notice"></div>
+                <div class="auth-card card">
+                    <div class="auth-head">
+                        <h1 class="page-title">Login</h1>
+                        <p class="page-subtitle">
+                            Use your account to book seats and manage your
+                            profile.
+                        </p>
+                    </div>
+                    <form id="login-form" class="auth-form">
+                        <div class="field">
+                            <label for="login-email">Email</label>
+                            <input
+                                id="login-email"
+                                name="email"
+                                type="email"
+                                class="input"
+                                placeholder="you@example.com"
+                                required
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="login-password">Password</label>
+                            <input
+                                id="login-password"
+                                name="password"
+                                type="password"
+                                class="input"
+                                placeholder="Your password"
+                                required
+                            />
+                        </div>
+                        <div class="actions">
+                            <button
+                                id="login-submit"
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Login
+                            </button>
+                            <a
+                                class="btn btn-secondary"
+                                href="/forgot-password.html"
+                                >Forgot password?</a
+                            >
+                        </div>
+                    </form>
+                    <div class="auth-links">
+                        <span>New here?</span>
+                        <a href="/register.html">Create an account</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="site-footer" class="footer"></footer>
+        <script type="module" src="/js/login.js"></script>
+    </body>
+</html>

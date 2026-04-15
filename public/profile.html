@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <title>Profile · Book My Ticket</title>
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/profile.css" />
+    </head>
+    <body>
+        <header id="site-header" class="topbar"></header>
+        <main class="page">
+            <section class="profile-shell">
+                <div id="profile-notice"></div>
+                <article class="profile-card card">
+                    <div>
+                        <h1 class="page-title">Profile</h1>
+                        <p class="page-subtitle">
+                            Manage the small things that matter: status, logout,
+                            and verification.
+                        </p>
+                    </div>
+                    <div id="profile-details" class="profile-list"></div>
+                    <div class="profile-actions">
+                        <button
+                            id="resend-verification"
+                            type="button"
+                            class="btn btn-primary"
+                        >
+                            Resend verification link
+                        </button>
+                        <button
+                            id="profile-logout"
+                            type="button"
+                            class="btn btn-secondary"
+                        >
+                            Logout
+                        </button>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer id="site-footer" class="footer"></footer>
+        <script type="module" src="/js/profile.js"></script>
+    </body>
+</html>
