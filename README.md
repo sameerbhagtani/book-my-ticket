@@ -1,6 +1,8 @@
 # Book My Ticket
 
-A backend system for a theatre booking platform with a complete authentication flow using access and refresh tokens, role-based admin routes, and concurrency-safe seat booking using row-level locking to prevent double bookings. The system is designed with a clean modular structure, proper validation, and scalable architecture.
+A theatre booking platform with a complete authentication flow using access and refresh tokens, role-based admin routes, and concurrency-safe seat booking using row-level locking to prevent double bookings. The system features a clean modular structure, robust validation, and a scalable architecture.
+
+This project is part of my [ChaiCode Web Dev Cohort 2026 Archive](https://github.com/sameerbhagtani/web-dev-cohort-2026). Checkout my entire journey there!
 
 ## Live Preview
 
